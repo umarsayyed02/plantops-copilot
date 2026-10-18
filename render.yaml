@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+services:
+  - type: web
+    name: plantops-copilot
+    runtime: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.server
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: PLANTOPS_GENERATOR
+        value: extractive
+      - key: PLANTOPS_EMBEDDING_BACKEND
+        value: hash
+      - key: PLANTOPS_ALLOW_UPLOADS
+        value: "false"
+      - key: PLANTOPS_MAX_UPLOAD_BYTES
+        value: "10000000"

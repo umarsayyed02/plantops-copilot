@@ -8,7 +8,7 @@ This project demonstrates practical entry-level AI/ML engineering: retrieval, em
 
 | Signal | Current result | Scope |
 |---|---:|---|
-| Recall@5 | 1.000 | 10 versioned questions |
+| Recall@5 | 1.000 | 11 versioned questions |
 | Mean reciprocal rank | 1.000 | 8 answerable questions |
 | Abstention accuracy | 1.000 | 8 answerable + 3 unsupported |
 | Citation precision | 1.000 | Sentence-selected citations |
@@ -95,7 +95,7 @@ PLANTOPS_EMBEDDING_BACKEND=fastembed python -m app.evaluation
 PLANTOPS_EMBEDDING_BACKEND=fastembed uvicorn app.main:app --port 8001
 ```
 
-The first semantic run downloads `BAAI/bge-small-en-v1.5` into `data/models`; later runs reuse the local cache. On the current small, terminology-heavy benchmark, semantic retrieval matches the baseline quality metrics but has higher latency. See [evaluation/results.md](evaluation/results.md) for the measured comparison and limitations.
+The first semantic run downloads `BAAI/bge-small-en-v1.5` into `data/models`; later runs reuse the local cache. On the current small, terminology-heavy benchmark, semantic retrieval matches the baseline ranking and abstention metrics but has lower citation precision and higher latency. See [evaluation/results.md](evaluation/results.md) for the measured comparison and limitations.
 
 ## Grounded LLM generation
 
@@ -154,8 +154,6 @@ check. Public uploads are disabled in that deployment.
 
 Docker remains an optional, portable packaging path. Run locally with Docker
 Compose when Docker is available:
-
-Run locally with Docker Compose:
 
 ```bash
 docker compose up --build

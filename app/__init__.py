@@ -1,0 +1,2 @@
+"""PlantOps Copilot application package."""
+

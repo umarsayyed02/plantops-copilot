@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+.env
+data/index/
+data/feedback/
+data/uploads/
+data/models/
+evaluation/reports/
+

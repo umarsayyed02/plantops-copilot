@@ -1,0 +1,80 @@
+[
+  {
+    "id": "overheating-causes",
+    "question": "What can cause the motor to overheat?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["restricted ventilation", "bearing friction"]
+  },
+  {
+    "id": "overheating-first-check",
+    "question": "What measurements should I take first for an overheating motor?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["measured current on all phases", "phase-to-phase voltage"]
+  },
+  {
+    "id": "voltage-unbalance",
+    "question": "Why is voltage imbalance dangerous for this motor?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["voltage unbalance greater than one percent"]
+  },
+  {
+    "id": "vibration-causes",
+    "question": "What are common reasons for increased vibration?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["loose mounting bolts", "shaft misalignment"]
+  },
+  {
+    "id": "vibration-directions",
+    "question": "In which directions should vibration be recorded?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["horizontal, vertical, and axial directions"]
+  },
+  {
+    "id": "bearing-grease",
+    "question": "Can adding too much grease make a bearing run hot?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["over-greasing can increase bearing temperature"]
+  },
+  {
+    "id": "restart-monitoring",
+    "question": "What should be monitored immediately after restarting the motor?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["monitor current, voltage, temperature, and vibration"]
+  },
+  {
+    "id": "electrical-safety",
+    "question": "What safety step is required before inspecting the motor?",
+    "answerable": true,
+    "expected_source": "sample_motor_manual.md",
+    "expected_phrases": ["disconnect and lock out electrical power"]
+  },
+  {
+    "id": "unsupported-hydraulic-oil",
+    "question": "Which hydraulic oil grade should be used in the lifting cylinder?",
+    "answerable": false,
+    "expected_source": null,
+    "expected_phrases": []
+  },
+  {
+    "id": "unsupported-telemetry",
+    "question": "How do I configure satellite telemetry encryption?",
+    "answerable": false,
+    "expected_source": null,
+    "expected_phrases": []
+  },
+  {
+    "id": "unsupported-live-state",
+    "question": "What is the live vibration telemetry reading right now?",
+    "answerable": false,
+    "expected_source": null,
+    "expected_phrases": []
+  }
+]
+

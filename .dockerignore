@@ -1,0 +1,15 @@
+.git
+.github
+.venv
+.pytest_cache
+__pycache__
+*.py[cod]
+.coverage
+.env
+data/index
+data/feedback
+data/uploads
+data/models
+evaluation/reports
+tests
+docs

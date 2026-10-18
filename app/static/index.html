@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="PlantOps Copilot — cited answers from industrial maintenance documents."
+    />
+    <title>PlantOps Copilot</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="PlantOps Copilot home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+          <span>
+            <strong>PlantOps</strong>
+            <small>Maintenance intelligence</small>
+          </span>
+        </a>
+        <div class="system-status" id="system-status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>Connecting</span>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <section class="side-section upload-section">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Knowledge base</span>
+              <h2>Documents</h2>
+            </div>
+            <span class="count-pill" id="document-count">0</span>
+          </div>
+
+          <label class="upload-zone" for="file-input" id="upload-zone">
+            <input id="file-input" type="file" accept=".pdf,.md,.txt" />
+            <span class="upload-icon" aria-hidden="true">↥</span>
+            <strong>Add a manual</strong>
+            <span>PDF, Markdown or text · 10 MB max</span>
+          </label>
+          <p class="inline-status" id="upload-status" aria-live="polite"></p>
+          <div class="document-list" id="document-list"></div>
+        </section>
+
+        <section class="side-section benchmark-section">
+          <div class="section-heading compact">
+            <div>
+              <span class="eyebrow">Evaluation</span>
+              <h2>Retrieval benchmark</h2>
+            </div>
+          </div>
+          <div id="benchmark-summary" class="benchmark-summary">
+            <div class="skeleton short"></div>
+            <div class="skeleton"></div>
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="hero" id="hero">
+          <span class="hero-kicker">Evidence before answers</span>
+          <h1>Ask the manual.<br /><em>See the source.</em></h1>
+          <p>
+            Troubleshoot equipment using indexed maintenance documents. Every
+            answer is cited—or safely declined when evidence is missing.
+          </p>
+          <div class="suggestion-grid" aria-label="Suggested questions">
+            <button class="suggestion" data-question="What can cause the motor to overheat?">
+              <span class="suggestion-number">01</span>
+              <span>Diagnose overheating</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="suggestion" data-question="What are common reasons for increased vibration?">
+              <span class="suggestion-number">02</span>
+              <span>Inspect vibration</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button class="suggestion" data-question="What safety step is required before inspecting the motor?">
+              <span class="suggestion-number">03</span>
+              <span>Review safety steps</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="conversation" id="conversation" aria-live="polite"></section>
+
+        <form class="composer" id="query-form">
+          <label for="question-input" class="sr-only">Ask a maintenance question</label>
+          <textarea
+            id="question-input"
+            rows="1"
+            maxlength="1000"
+            placeholder="Ask about symptoms, inspections, or safety procedures…"
+            required
+          ></textarea>
+          <button type="submit" id="submit-button" aria-label="Send question">
+            <span>Ask</span><span aria-hidden="true">↗</span>
+          </button>
+          <p class="composer-note">Answers may be incomplete. Follow approved safety procedures.</p>
+        </form>
+      </main>
+    </div>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

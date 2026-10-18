@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        INSTALL_SEMANTIC: "true"
+    ports:
+      - "8000:8000"
+    environment:
+      PLANTOPS_DATA_DIR: /app/data
+      PLANTOPS_EMBEDDING_BACKEND: fastembed
+      PLANTOPS_ALLOW_UPLOADS: "true"
+    volumes:
+      - ./data:/app/data
+
