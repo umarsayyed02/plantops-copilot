@@ -48,7 +48,7 @@ The optional image:
 
 ## Render Blueprint deployment without Docker
 
-The repository includes `render.yaml`, configured for a small public portfolio demo in the Singapore region.
+The repository includes `render.yaml`, configured for a small public deployment in the Singapore region.
 
 1. Push the repository to GitHub or GitLab.
 2. In Render, create a new Blueprint and select the repository.
@@ -68,7 +68,7 @@ Render's Blueprint specification documents `runtime: python`, `buildCommand`, `s
 
 ## Storage model
 
-The free demo uses ephemeral service storage. The bundled sample manual is committed with the application, while runtime feedback and generated index files can disappear during a redeploy or restart. That is acceptable for a read-only portfolio demonstration.
+The free deployment uses ephemeral service storage. The bundled sample manual is committed with the application, while runtime feedback and generated index files can disappear during a redeploy or restart. This is acceptable for a read-only demonstration.
 
 For persistent uploads, use a paid persistent disk or external object storage. If attaching a disk, mount it at a dedicated path such as `/var/data/plantops`, set `PLANTOPS_DATA_DIR` to that path, seed the raw corpus separately, and enable uploads only after adding authentication and file scanning.
 
@@ -106,4 +106,4 @@ docker run --rm -p 8000:8000 \
   plantops-copilot:semantic
 ```
 
-The first startup downloads the configured BGE model unless a cached model directory is mounted. For a recruiter demo, the baseline image is faster and more predictable.
+The first startup downloads the configured BGE model unless a cached model directory is mounted. The baseline image is faster and more predictable when semantic retrieval is not required.

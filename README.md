@@ -2,8 +2,6 @@
 
 An evaluated, citation-first RAG assistant for industrial maintenance manuals. It ingests PDF, Markdown, and text documents; retrieves supporting passages; answers with traceable evidence; and abstains when the indexed corpus does not support a safe response.
 
-This project demonstrates practical entry-level AI/ML engineering: retrieval, embeddings, grounded generation, evaluation, API design, testing, deployment, and a usable interface—not only an LLM call.
-
 ## Results at a glance
 
 | Signal | Current result | Scope |
@@ -17,7 +15,7 @@ This project demonstrates practical entry-level AI/ML engineering: retrieval, em
 
 These numbers validate the pipeline on one synthetic motor manual split into three chunks. They are intentionally reported with their scope and are not presented as production-quality estimates.
 
-## What the application demonstrates
+## Core capabilities
 
 - Hybrid retrieval with BM25 and deterministic hashing vectors
 - Optional BGE semantic embeddings through FastEmbed/ONNX
@@ -184,8 +182,6 @@ data/raw/               Synthetic demonstration manual
 evaluation/             Versioned questions, benchmark summary, and analysis
 tests/                  Unit and API tests
 docs/deployment.md      Local and hosted deployment guide
-docs/resume-interview-guide.md
-                        Resume bullets, project pitch, and interview preparation
 render.yaml             Native Python Render Blueprint
 Dockerfile              Optional non-root container image
 ```
@@ -197,7 +193,5 @@ Dockerfile              Optional non-root container image
 - Text-based PDFs are supported; scanned PDFs need OCR.
 - Citations prove retrieval provenance, not universal equipment safety.
 - The app has no user authentication or malware scanning. Keep uploads disabled on a public demo.
-- Local JSON storage is suitable for a portfolio demonstration, not concurrent multi-instance production.
+- Local JSON storage is suitable for a single-instance demonstration, not concurrent multi-instance production.
 - A real deployment should add authenticated object storage, a database or vector store, rate limiting, observability, and a larger held-out evaluation set.
-
-For the recruiter-ready project entry, 90-second explanation, demo script, and likely interview questions, see [docs/resume-interview-guide.md](docs/resume-interview-guide.md).
